@@ -70,7 +70,7 @@ $language_data = array (
 			)
 		),
 	'SYMBOLS' => array(
-		'(', ')', '[', ']', '{', '}', '*', '&', '%', '!', ';', '<', '>', '?'
+		1 => array('(', ')', '[', ']', '{', '}', '*', '&', '%', '!', ';', '<', '>', '?')
 		),
 	'CASE_SENSITIVE' => array(
 		GESHI_COMMENTS => true,
@@ -95,7 +95,7 @@ $language_data = array (
 			0 => 'color: #000099; font-weight: bold;'
 			),
 		'BRACKETS' => array(
-			0 => 'color: #000000;'
+			0 => 'color: #000033;'
 			),
 		'STRINGS' => array(
 			0 => 'color: #ff0000;'
@@ -104,11 +104,11 @@ $language_data = array (
 			0 => 'color: #cc66cc;'
 			),
 		'METHODS' => array(
-			1 => 'color: #000000;',
-			2 => 'color: #000000;'
+			//1 => 'color: #000000;',
+			//2 => 'color: #000000;'
 			),
 		'SYMBOLS' => array(
-			0 => 'color: #000000;'
+			1 => 'color: #FF00FF; font-weight: bold;'
 			),
 		'SCRIPT' => array(
 			),

@@ -8,7 +8,7 @@ include_once 'geshi.php';
 // Define some source to highlight, a language to use
 // and the path to the language files
 //
- 
+/* 
 $source = '
 #import("dart:io");
 class Printer extends Isolate {
@@ -30,6 +30,8 @@ main() {
   });
 } 
 ';
+ */
+$source = file_get_contents('parser.dart');
 $language = 'Dart';
  
 //
