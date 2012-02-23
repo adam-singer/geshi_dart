@@ -1,0 +1,21 @@
+<pre class="dart">&nbsp;
+<span style="color: #000000;">#import(&quot;dart:io&quot;);</span>
+<span style="color: #0055FF; font-weight: bold;">class</span> Printer <span style="color: #0055FF; font-weight: bold;">extends</span> Isolate <span style="color: #000000;">&#123;</span>
+  main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span> <span style="color: #000000;">&#123;</span>
+    port.<span style="color: #000000;">receive</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>message, replyTo<span style="color: #000000;">&#41;</span> <span style="color: #000000;">&#123;</span>
+      <span style="color: #0055FF;">if</span> <span style="color: #000000;">&#40;</span>message == <span style="color: #0055FF; font-weight: bold;">null</span><span style="color: #000000;">&#41;</span> port.<span style="color: #000000;">close</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>;
+      <span style="color: #0055FF;">else</span> <span style="color: #FF00FF; font-weight: bold;">print</span><span style="color: #000000;">&#40;</span>message<span style="color: #000000;">&#41;</span>;
+    <span style="color: #000000;">&#125;</span><span style="color: #000000;">&#41;</span>;
+  <span style="color: #000000;">&#125;</span>
+<span style="color: #000000;">&#125;</span>
+&nbsp;
+main<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span> <span style="color: #000000;">&#123;</span>
+  <span style="color: #0055FF;">var</span> v = <span style="color: #ff0000;">&quot;10&quot;</span> + <span style="color: #cc66cc;">10</span>.<span style="color: #000000;">toString</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span> + <span style="color: #ff0000;">&quot;${v}&quot;</span>;
+  <span style="color: #0055FF; font-weight: bold;">new</span> Printer<span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>.<span style="color: #000000;">spawn</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#41;</span>.<span style="color: #000000;">then</span><span style="color: #000000;">&#40;</span><span style="color: #000000;">&#40;</span>port<span style="color: #000000;">&#41;</span> <span style="color: #000000;">&#123;</span>
+    <span style="color: #0055FF;">for</span> <span style="color: #000000;">&#40;</span><span style="color: #0055FF;">var</span> message <span style="color: #0055FF;">in</span> <span style="color: #000000;">&#91;</span><span style="color: #ff0000;">&quot;Hello&quot;</span>, <span style="color: #ff0000;">&quot;from&quot;</span>, <span style="color: #ff0000;">&quot;other&quot;</span>, <span style="color: #ff0000;">&quot;isolate&quot;</span><span style="color: #000000;">&#93;</span><span style="color: #000000;">&#41;</span> <span style="color: #000000;">&#123;</span>
+      port.<span style="color: #000000;">send</span><span style="color: #000000;">&#40;</span>message<span style="color: #000000;">&#41;</span>;  
+    <span style="color: #000000;">&#125;</span>
+    port.<span style="color: #000000;">send</span><span style="color: #000000;">&#40;</span><span style="color: #0055FF; font-weight: bold;">null</span><span style="color: #000000;">&#41;</span>;
+  <span style="color: #000000;">&#125;</span><span style="color: #000000;">&#41;</span>;
+<span style="color: #000000;">&#125;</span> 
+&nbsp;</pre>
