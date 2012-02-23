@@ -7,7 +7,7 @@ Syntax highlighter for dart in geshi. [Rosetta Code](http://rosettacode.org/wiki
 [dart.php](https://github.com/financeCoding/geshi_dart/blob/master/geshi/dart.php)
 --------
 
-Building the sample test.php with embedded dart code generates test.html: 
+Building the sample [test.php](https://github.com/financeCoding/geshi_dart/blob/master/test.php) with embedded dart code generates [test.html](https://github.com/financeCoding/geshi_dart/blob/master/test.html): 
 
     ./buildTest.sh
 
